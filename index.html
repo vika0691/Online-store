@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <link href="./ui/css/style.css" rel="stylesheet"></link>
+    <title>Online-store</title>
+</head>
+
+<body>  
+    <nav class="navbar navbar-expand-xl navbar-light" style="background-color: #FFFBF6;">
+        <div class="container-fluid">
+            <div class="navbar-brand" href="#">
+                <img class="nav-logo" src="./ui/images/logo/ONE-SHORT.svg" />
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLight" aria-controls="navbarLight" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarLight">
+                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                    <li class="nav-item">
+                    <a class="nav-link"  href="#">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Коллекции</a>
+                    </li>
+                </ul>
+
+                <div class="cont-for-form">
+                   <form class="cont-search">
+                        <input class="form" type="search" placeholder="Поиск">
+                        <button class="button-search">Найти</button>
+                    </form>
+                
+                    <div class="navbar-right-part">
+                        <div class="nav-item">
+                            <div class="cont-icon-navbar">
+                                <!-- <img class="icons-navbar" src="./ui/images/icons/user-icon.svg" />
+                                <img class="icons-navbar" src="./ui/images/icons/heart-icon.svg" /> -->
+                                <img class="icons-navbar" src="./ui/images/icons/bag-icon.svg" />
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselWithCaptions" class="carousel slide" data-bs-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-bs-target="#carouselWithCaptions" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselWithCaptions" data-bs-slide-to="1"></li>
+        </ol> -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./ui/images/For-slider-main-1.jpg" class="d-block w-100" alt="Slide 1" />
+                <div class="carousel-caption d-none d-sm-block">
+                    <h1>Скидки до 35%</h1>
+                    <div class="rect-cont"></div>
+                    <p class="text-main">Смотреть все</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./ui/images/For-slider-main-2.jpg" class="d-block w-100" alt="Slide 2" />
+                <div class="carousel-caption d-none d-sm-block">
+                    <h1>Новая коллекция</h1>
+                    <div class="rect-cont"></div>
+                    <p class="text-main">Смотреть все</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselWithCaptions" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselWithCaptions" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+
+    <!-- Новая коллекция -->
+    <div class="container-new-col">
+        <div class="cont-collection">
+            <div class="rect-n-coll">
+                <h1>НОВАЯ КОЛЛЕКЦИЯ</h1>
+                <a href="http://localhost/Online-store-project/main.html">Посмотреть все</a>
+                <!-- <div class="text-coll">Посмотреть все</div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Готовые модели -->
+    <div class="h-cat">Готовые модели</div>
+    <div class="cont-filter">
+        <button class="t-filter">Футболки</button>
+        <button class="t-filter">Толстовки</button>
+    </div>
+
+    <div class="card-container">
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Hoddie-cat-1.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Толстовка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="1" data-product-name="Товар 1" data-product-price="10">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 799 ₽</div>
+            </div>
+        </div>
+        
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Hoddie-cat-2.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Толстовка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="2" data-product-name="Товар 2" data-product-price="20">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 799 ₽</div>
+            </div>
+        </div>
+
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Hoddie-cat-3.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Толстовка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="3" data-product-name="Товар 3" data-product-price="30">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 799 ₽</div>
+            </div>
+        </div>
+
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Hoddie-cat-4.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Толстовка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="4" data-product-name="Товар 4" data-product-price="40">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 799 ₽</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-container">
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Short-cat-1.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Футболка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="5" data-product-name="Товар 5" data-product-price="50">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 499 ₽</div>
+            </div>
+        </div>
+        
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Short-cat-2.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Футболка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="6" data-product-name="Товар 6" data-product-price="60">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 499 ₽</div>
+            </div>
+        </div>
+
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Short-cat-3.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Футболка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="7" data-product-name="Товар 7" data-product-price="70">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 499 ₽</div>
+            </div>
+        </div>
+
+        <div class="container-for-cat">
+            <div class="rect-card">
+                <img class="image-catalog" src="./ui/images/Short-cat-4.jpg" />
+            </div>
+
+            <div class="cont-for-cards-desc">
+            <div class="descrip-card">Футболка</div>
+                <div class="cont-for-el-card">
+                    <div class="cont-size">
+                        <button class="size">XS</button>
+                        <button class="size">S</button>
+                        <button class="size">M</button>
+                        <button class="size">L</button>
+                    </div>
+                    
+                    <div class="cont-but-cat">
+                        <button id="addToCartBtn" class="cat-card" data-product-id="8" data-product-name="Товар 8" data-product-price="80">В корзину</button>
+                    </div>
+                </div>
+                <div class="price-card-cat">1 499 ₽</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шоурум -->
+    <div class="h-cat">Шоурум</div>
+    <div class="cont-for-all-showroom">
+        <div class="cont-img-shr">
+            <img id="img-showroom" class="img-showroom" src="./ui/images/Hoodie-white-showroom.png"  />
+        </div>
+
+        <div class="cont-txt-shr">
+            <div class="ct-mdl-ssh">
+                <div class="txt-choose-mod">Выберите модель:</div>
+                <div class="cont-mdl-sh">
+                    <button id="model-h" class="model-shr active" data-model-shr="model-h">Толстовка</button>
+                    <button id="model-s" class="model-shr" data-model-shr="model-s">Футболка</button>
+                </div>
+            </div>
+            
+            <div class="cont-size-shr">
+                <button class="size-sr">XS</button>
+                <button class="size-sr">S</button>
+                <button class="size-sr">M</button>
+                <button class="size-sr">L</button>
+            </div>
+            
+            <div class="cont-colour">
+                <div class="txt-choose-mod">Выберите цвет:</div>
+                <div class="ct-g-cl">
+                    <button id="colour-w" class="choose-colour-w"></button>
+                    <button id="colour-b" class="choose-colour-b"></button>
+                </div>
+            </div>
+            
+            <div class="cont-pr">
+                <div class="txt-choose-mod">Выберите принт:</div>
+                <div class="cont-ch-pr">
+                    <button class="choose-print">PR</button>
+                    <button class="choose-print">PR</button>
+                    <button class="choose-print">PR</button>
+                </div>
+                
+            </div>
+            
+
+            <div class="cont-butt-shwr">
+                <button class="showr">В корзину</button>
+                <button class="showr-pr">Свой принт</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Новости -->
+    <div class="h-cat">Новости</div>
+    <div class="cont-main-news">
+        <div class="img-main-new">
+            <img class="m-n" src="./ui/images/News-main.jpg" />
+        </div>
+
+        <div class="cont-text-m-n">
+            <div class="rect-main-new">
+                <div class="txt-m-n">Худи и толстовки снова в моде.<br>Теперь официально: толстовка<br>с капюшоном — тренд осени и зимы 2025</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cont-other-nws">
+        <div class="cont-or-ns">
+            <img class="other-ns" src="./ui/images/News-2.jpg" />
+            <div class="text-news">Модные женские толстовки и худи в 2025 году</div>
+        </div>
+
+        <div class="cont-or-ns">
+            <img class="other-ns" src="./ui/images/News-3.jpg" />
+            <div class="text-news">Идеи, с чем носить и сочетать. Модные тренды</div>
+        </div>
+
+        <div class="cont-or-ns">
+            <img class="other-ns" src="./ui/images/News-4.jpg" />
+            <div class="text-news">Вышла новая коллекция! Скорее переходи по ссылке</div>
+        </div>
+    </div>
+
+    <!-- Часто задаваемые вопросы -->
+    <div class="h-cat">Часто задаваемые вопросы</div>
+    <div class="container-fqa">
+        <div class="cont-txt-recr-fqa">
+            <div class="txt-fqa">Какими способами я могу вернуть товар?</div>
+
+            <div class="icon-arr-fqa">
+                <img class="icon-arrow" src="./ui/images/icons/arrow-vector-icon.svg" />
+            </div>
+        </div>
+
+        <div class="cont-txt-recr-fqa">
+            <div class="txt-fqa">Можно ли передать товар на возврат через курьера?</div>
+
+            <div class="icon-arr-fqa">
+                <img class="icon-arrow" src="./ui/images/icons/arrow-vector-icon.svg" />
+            </div>
+        </div>
+
+        <div class="cont-txt-recr-fqa">
+            <div class="txt-fqa">Какой установлен срок для возврата товара надлежащего качества?</div>
+
+            <div class="icon-arr-fqa">
+                <img class="icon-arrow" src="./ui/images/icons/arrow-vector-icon.svg" />
+            </div>
+        </div>
+
+        <div class="cont-txt-recr-fqa">
+            <div class="txt-fqa">Можно ли вернуть денежные средства на другую карту?</div>
+
+            <div class="icon-arr-fqa">
+                <img class="icon-arrow" src="./ui/images/icons/arrow-vector-icon.svg" />
+            </div>
+        </div>
+
+        <div class="cont-txt-recr-fqa">
+            <div class="txt-fqa">Через какое время мне вернутся денежные средства при возврате товара?</div>
+
+            <div class="icon-arr-fqa">
+                <img class="icon-arrow" src="./ui/images/icons/arrow-vector-icon.svg" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Подписка на новости -->
+    <div class="cont-block-soon">
+        <div class="rect-soon">
+            <div class="left-cont-soon">
+                <div class="text-main-soon">СКОРО НОВАЯ КОЛЛЕКЦИЯ</div>
+                <div class="text-soon">Подпишись на рассылку, чтобы не пропустить</div>
+            </div>
+
+            <div class="right-cont-soon">
+                <form class="cont-email-soon">
+                    <div class="cont-email">
+                        <input class="form-email" type="email" placeholder="E-mail">
+                        <button class="button-email">Отправить</button>
+                    </div>
+                    <div class="cont-for-chbox">
+                        <input type="checkbox" checked>
+                        <div class="txt-for-checkbox">Я согласен на обработку информации и персональных данных</div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <div class="cont-footer">
+        <div class="cont-two-inf">
+            <div class="cont-for-two-clients">
+                <div class="cont-clients">
+                <div class="foot-clients">Покупателям</div>
+                    <div class="left-foot">
+                        <div class="txt-left-foot">Способы оплаты</div>
+                        <div class="txt-left-foot">Как сделать заказ</div>
+                        <div class="txt-left-foot">Доставка</div>
+                        <div class="txt-left-foot">Возврат товара</div>
+                        <div class="txt-left-foot">Возврат средств</div>
+                        <div class="txt-left-foot">Вопросы и ответы</div>
+                    </div>
+                </div>
+                <div class="cont-clients">
+                    <div class="foot-clients">О нас</div>
+                    <div class="left-foot">
+                        <div class="txt-left-foot">О бренде</div>
+                        <div class="txt-left-foot">Новости и акции</div>
+                        <div class="txt-left-foot">Мы в соц.сетях</div>
+                        <div class="txt-left-foot">Контакты</div>
+                        <div class="txt-left-foot">Сотрудничество</div>
+                        <div class="txt-left-foot">Вакансии</div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="right-foot">
+                <div class="cont-logo-right">
+                    <img class="logo-foot" src="./ui/images/logo/ONE-SHORT.svg" />
+                </div>
+                <div class="cont-right-desc">
+                    <div class="text-right-foot">МЫ В СОЦ.СЕТЯХ</div>
+                     <div class="img-icons-foot">
+                        <img class="icons-footer" src="./ui/images/icons/telegram-icon.svg" />
+                        <img class="icons-footer" src="./ui/images/icons/vk-icon.svg" />
+                        <img class="icons-footer" src="./ui/images/icons/twitter-icon.svg" />
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./ui/js/js-main.js"></script>
+</body>
+</html>

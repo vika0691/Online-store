@@ -1,0 +1,81 @@
+body{
+    font-family: "Raleway", serif; 
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.h-cat {
+    font-size: 37px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.new-coll-cont {
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+}
+
+.descrip-card {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.size {
+    font-size: 22px;
+    width: 40px;
+    background-color: #fdfdfd;
+}
+
+.cat-card {
+    padding: 8px 20px;
+    border-radius: 10px;
+    /* border: 2px #000000; */
+    background-color: #121212;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+}
+
+.price-card-cat {
+    font-size: 22px;
+}
+
+.cont-for-cards-desc {
+    /* width: 50%; */
+    margin-left: 30px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-for-el-card {
+    display: flex;
+    gap: 127px;
+}
+
+.cont-size {
+    gap: 8px;
+    display: flex;
+}
+
+.size {
+    border-radius: 4px;
+}
+
+.card-container {
+    display: flex;
+    margin-top: 42px;
+    justify-content: space-evenly;
+}
+
+.image-catalog {
+    width: 500px;
+    height: 600px;
+}
+
+.container-for-cat {
+    display: flex;
+    flex-direction: column;
+}
