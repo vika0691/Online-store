@@ -267,17 +267,17 @@ a {
     background-color: #fdfdfd;
 }
 
-.choose-colour-w {
-    width: 45px;
-    height: 44px;
+.choose-color--white {
     background-color: #fff;
-    border-radius: 4px;
 }
 
-.choose-colour-b {
-    width: 45px;
-    height: 44px;
+.choose-color--black {
     background-color: #000000;
+}
+
+.choose-color {
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
 }
 
@@ -515,6 +515,16 @@ input[type="checkbox"] {
     gap: 18px;
 }
 
-.active {
+label > input[type="radio"] {
+    display: none;
+}
+
+label > input[type="radio"]:checked + .select {
     border: 1px solid #000;
+}
+
+label > input[type="radio"]:checked + .select-solid {
+    background-color: #d5d5d5;
+    text-align: center;
+    padding-top: 5px;
 }

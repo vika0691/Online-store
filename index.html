@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <link href="./ui/css/style.css" rel="stylesheet"></link>
+    <script defer src="./ui/js/check-input.js"></script>
     <title>Online-store</title>
 </head>
 
@@ -120,7 +121,10 @@
                     </div>
                     
                     <div class="cont-but-cat">
-                        <button id="addToCartBtn" class="cat-card" data-product-id="1" data-product-name="Товар 1" data-product-price="10">В корзину</button>
+                        <button id="addToCartBtn" class="cat-card" data-product='{ 
+                            "id": 1, 
+                            "name": 
+                        }' data-product-id="1" data-product-name="Товар 1" data-product-price="10">В корзину</button>
                     </div>
                 </div>
                 <div class="price-card-cat">1 799 ₽</div>
@@ -303,8 +307,14 @@
             <div class="ct-mdl-ssh">
                 <div class="txt-choose-mod">Выберите модель:</div>
                 <div class="cont-mdl-sh">
-                    <button id="model-h" class="model-shr active" data-model-shr="model-h">Толстовка</button>
-                    <button id="model-s" class="model-shr" data-model-shr="model-s">Футболка</button>
+                    <label>
+                        <input id="model-h" name="model" type="radio" />
+                        <div class="select-solid model-shr" data-model-shr="model-s">Футболка</div>
+                    </label>
+                    <label>
+                        <input id="model-s" name="model" type="radio" />
+                        <div class="select-solid model-shr">Толстовка</div>
+                    </label>
                 </div>
             </div>
             
@@ -317,9 +327,15 @@
             
             <div class="cont-colour">
                 <div class="txt-choose-mod">Выберите цвет:</div>
-                <div class="ct-g-cl">
-                    <button id="colour-w" class="choose-colour-w"></button>
-                    <button id="colour-b" class="choose-colour-b"></button>
+                <div class="ct-g-cl" id="select-colors">
+                    <label>
+                        <input id="colour-w" name="color" type="radio" />
+                        <div class="select choose-color choose-color--white"></div>
+                    </label>
+                    <label>
+                        <input id="colour-b" name="color" type="radio" />
+                        <div class="select choose-color choose-color--black"></div>
+                    </label>
                 </div>
             </div>
             
@@ -429,13 +445,14 @@
                 <form class="cont-email-soon">
                     <div class="cont-email">
                         <input class="form-email" type="email" placeholder="E-mail">
-                        <button class="button-email">Отправить</button>
+                        <button class="button-email" id="sendEmail" type="button">Отправить</button>
                     </div>
                     <div class="cont-for-chbox">
-                        <input type="checkbox" checked>
-                        <div class="txt-for-checkbox">Я согласен на обработку информации и персональных данных</div>
+                        <label>
+                            <input id="checkbox" type="checkbox" checked>
+                            <div class="txt-for-checkbox">Я согласен на обработку информации и персональных данных</div>
+                        </label>
                     </div>
-                    
                 </form>
             </div>
         </div>

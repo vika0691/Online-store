@@ -32,20 +32,11 @@ colourB.addEventListener("click", (event) => {
   setActive(colourB);
 });
 
+
+
 function updateImage() {
-  let imageSrc = "";
-
-  if (currentModel === "H" && currentColour === "W") {
-    imageSrc = "./ui/images/Hoodie-white-showroom.png";
-  } else if (currentModel === "H" && currentColour === "B") {
-    imageSrc = "./ui/images/Hoodie-bl-showroom.png";
-  } else if (currentModel === "S" && currentColour === "W") {
-    imageSrc = "./ui/images/Short-white-showroom.png";
-  } else if (currentModel === "S" && currentColour === "B") {
-    imageSrc = "./ui/images/Short-black-showroom.png";
-  }
-
-  imgShowRoom.src = imageSrc;
+  if (!currentModel || !currentColour) return;
+  imgShowRoom.src = `./ui/images/${currentModel === "H" ? "Hoodie" : "Short"}-${currentColour === "W" ? "white" : "black"}-showroom.png`;
 }
 
 function setActive(element) {
