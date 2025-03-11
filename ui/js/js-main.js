@@ -1,51 +1,37 @@
 const modelH = document.getElementById("model-h");
 const modelS = document.getElementById("model-s");
 const imgShowRoom = document.getElementById("img-showroom");
-const colourW = document.getElementById("colour-w");
-const colourB = document.getElementById("colour-b");
-const obj = {};
+const colorW = document.getElementById("colour-w");
+const colorB = document.getElementById("colour-b");
+const obj = {
+  model: null,
+  color: 'W',
+};
 
-let currentModel = null; //  Сохраняем текущую выбранную модель (H или S)
-let currentColour = null; // Сохраняем текущий выбранный цвет (W или B)
+handleClick(modelH, 'model')
+handleClick(modelS, 'model')
+handleClick(colorW, 'color')
+handleClick(colorB, 'color')
 
-modelH.addEventListener("click", (event) => {
-  currentModel = "H";
-  updateImage();
-  setActive(modelH);
-});
+/**
+ * **handleClick** - можно изменить и сделать ее чуть более универсальный.
+ * За счет выноса из нее updateImage и передачи, как аргумента, тогда можно будет передавать любые параметры
+ * И с любыми данными и любому нашему требованию оно будет работать.
+ * А еще можно callback функцию написать
+ * 
+ * @param {HTMLInputElement} element 
+ * @param {string} key 
+ */
+function handleClick(element, key) {
+  element.addEventListener("click", () => {
+    const data = JSON.parse(element.value);
+    obj[key] = data[key];    
 
-modelS.addEventListener("click", (event) => {
-  currentModel = "S";
-  updateImage();
-  setActive(modelS);
-});
-
-colourW.addEventListener("click", (event) => {
-  currentColour = "W";
-  updateImage();
-  setActive(colourW);
-});
-
-colourB.addEventListener("click", (event) => {
-  currentColour = "B";
-  updateImage();
-  setActive(colourB);
-});
-
-
-
-function updateImage() {
-  if (!currentModel || !currentColour) return;
-  imgShowRoom.src = `./ui/images/${currentModel === "H" ? "Hoodie" : "Short"}-${currentColour === "W" ? "white" : "black"}-showroom.png`;
+    updateImage(obj);
+  });
 }
 
-function setActive(element) {
-  // Убираем класс active у всех элементов
-  modelH.classList.remove("active");
-  modelS.classList.remove("active");
-  colourW.classList.remove("active");
-  colourB.classList.remove("active");
-
-  // Добавляем класс active только выбранному элементу
-  element.classList.add("active");
+function updateImage({ color, model }) {
+  if (!model || !color) return;
+  imgShowRoom.src = `./ui/images/${model === "H" ? "Hoodie" : "Short"}-${color === "W" ? "white" : "black"}-showroom.png`;
 }
