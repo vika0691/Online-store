@@ -35,3 +35,18 @@ function updateImage({ color, model }) {
   if (!model || !color) return;
   imgShowRoom.src = `./ui/images/${model === "H" ? "Hoodie" : "Short"}-${color === "W" ? "white" : "black"}-showroom.png`;
 }
+
+
+// const button = document.getElementById("button-swr");
+// const form = document.getElementById("str");
+
+// button.addEventListener("click", showMessage);
+
+// function showMessage() {
+//   const text = form.value;
+//   const data = {
+//     message: text
+//   }
+
+//   console.log(JSON.stringify(data))
+// }
