@@ -1,4 +1,4 @@
-import { addProduct } from './cart.js'
+import { Storage, Product } from './cart.js'
 const btn = document.getElementsByClassName("cat-card")
 
 for (const el of Array.from(btn)) {
@@ -11,4 +11,16 @@ for (const el of Array.from(btn)) {
         console.warn('el is undefined', (el as HTMLElement).dataset)
     }
    })
+}
+
+export function addProduct(product: string) {
+    const { id, ...data } = JSON.parse(product) as Product
+    const resultGetItem = Storage.getItem(String(id))
+
+    if(resultGetItem !== undefined) {
+        Storage.updateItem(String(id), { id, ...data })
+        return;
+    }
+
+    Storage.setItem({ id, ...data, count: 1 });
 }
