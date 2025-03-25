@@ -9,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <link href="./ui/css/style.css" rel="stylesheet">
-    </link>
-    <script defer src="./ui/js/check-input.js"></script>
+    <link href="./ui/css/style.css" rel="stylesheet"></link>
+    <script type="module" src="./dist/js-main.js"></script>
+    <script type="module" src="./dist/handleToProductCart.js"></script>
+    <script defer src="./dist/check-input.js"></script>
+    <script type="module" src="./ui/js/faq.js"></script>
     <title>Online-store</title>
 </head>
 
@@ -93,7 +95,7 @@
         <div class="cont-collection">
             <div class="rect-n-coll">
                 <h1>НОВАЯ КОЛЛЕКЦИЯ</h1>
-                <a href="http://localhost/Online-store-project/main.html">Посмотреть все</a>
+                <a class="new-coll-hr" href="http://localhost/Online-store-project/main.html">Посмотреть все</a>
                 <!-- <div class="text-coll">Посмотреть все</div> -->
             </div>
         </div>
@@ -123,11 +125,7 @@
                     </div>
 
                     <div class="cont-but-cat">
-                        <button id="addToCartBtn" class="cat-card" data-product='{ 
-                            "id": 1, 
-                            "name": "Product-1",
-                            "price": "1 799₽" 
-                        }'>В корзину</button>
+                        <button id="addToCartBtn" class="cat-card" data-product='{ "id": 1, "name": "Product-1","price": "1 799₽" }'>В корзину</button>
                     </div>
                 </div>
                 <div class="price-card-cat">1 799 ₽</div>
@@ -150,11 +148,7 @@
                     </div>
 
                     <div class="cont-but-cat">
-                        <button id="addToCartBtn" class="cat-card" data-product='{ 
-                            "id": 2, 
-                            "name": "Product-2",
-                            "price": "1 799₽" 
-                        }'>В корзину</button>
+                        <button id="addToCartBtn" class="cat-card" data-product='{ "id": 2, "name": "Product-2","price": "1 799₽" }'>В корзину</button>
                     </div>
                 </div>
                 <div class="price-card-cat">1 799 ₽</div>
@@ -398,8 +392,7 @@
 
         <div class="cont-text-m-n">
             <div class="rect-main-new">
-                <div class="txt-m-n">Худи и толстовки снова в моде.<br>Теперь официально: толстовка<br>с капюшоном —
-                    тренд осени и зимы 2025</div>
+            <a class="txt-m-n" href="https://theblueprint.ru/fashion/trends/hoodies-2024?ysclid=m8oki18gkr956386268">Худи и толстовки снова в моде.<br>Теперь официально: толстовка<br>с капюшоном — тренд осени и зимы 2025</a>
             </div>
         </div>
     </div>
@@ -407,23 +400,23 @@
     <div class="cont-other-nws">
         <div class="cont-or-ns">
             <img class="other-ns" src="./ui/images/News-2.jpg" />
-            <div class="text-news">Модные женские толстовки и худи в 2025 году</div>
+            <a class="text-news" href="https://theblueprint.ru/fashion/trends/hoodies-2024?ysclid=m8oki18gkr956386268">Модные женские толстовки и худи в 2025 году</a>
         </div>
 
         <div class="cont-or-ns">
             <img class="other-ns" src="./ui/images/News-3.jpg" />
-            <div class="text-news">Идеи, с чем носить и сочетать. Модные тренды</div>
+            <a class="text-news" href="https://theblueprint.ru/fashion/trends/hoodies-2024?ysclid=m8oki18gkr956386268">Идеи, с чем носить и сочетать. Модные тренды</a>
         </div>
 
         <div class="cont-or-ns">
             <img class="other-ns" src="./ui/images/News-4.jpg" />
-            <div class="text-news">Вышла новая коллекция! Скорее переходи по ссылке</div>
+            <a class="text-news" href="https://theblueprint.ru/fashion/trends/hoodies-2024?ysclid=m8oki18gkr956386268">Вышла новая коллекция! Скорее переходи по ссылке</a>
         </div>
     </div>
 
     <!-- Часто задаваемые вопросы -->
-    <div class="h-cat">Часто задаваемые вопросы</div>
-    <div class="container-fqa">
+    <!-- <div class="h-cat">Часто задаваемые вопросы</div> -->
+    <!-- <div class="container-fqa">
         <div class="cont-txt-recr-fqa">
             <div class="txt-fqa">Какими способами я могу вернуть товар?</div>
 
@@ -463,6 +456,37 @@
                 <img class="icon-arrow" src="./ui/images/icons/arrow-vector-icon.svg" />
             </div>
         </div>
+    </div> -->
+
+    <div class="container">
+        <div class="header-primary">Вопрос-Ответ</div>
+        
+        <section class="faq">
+            <div class="faq-item">
+                <div class="faq-question">Какими способами я могу вернуть товар?<span class="expand-icon">+</span></div>
+                <div class="faq-answer">Через пункты выдачи заказов и Почту России. </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли передать товар на возврат через курьера?<span class="expand-icon">+</span></div>
+                <div class="faq-answer">Не предусмотрен возврат товара через курьера. </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Какой установлен срок для возврата товара надлежащего качества?<span class="expand-icon">+</span></div>
+                <div class="faq-answer">В течение 14 календарных дней, не считая дня покупки.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли вернуть денежные средства на другую карту, которой не производилась оплата?<span class="expand-icon">+</span></div>
+                <div class="faq-answer">Нет.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Через какое время мне вернутся денежные средства при возврате товара?<span class="expand-icon">+</span></div>
+                <div class="faq-answer">В зависимости от банка, в течение 3-4 дней.</div>
+            </div>
+        </section>
     </div>
 
     <!-- Подписка на новости -->
@@ -536,7 +560,6 @@
         </div>
     </div>
 
-    <script src="./ui/js/js-main.js"></script>
 </body>
 
 </html>

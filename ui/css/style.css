@@ -1,3 +1,11 @@
+:root {
+    /* Основные цвета */
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --faq-bg: #fff;
+    --faq-border: #ddd;
+}
+
 body{
     font-family: "Raleway", serif; 
     font-optical-sizing: auto;
@@ -97,7 +105,7 @@ body{
     font-size: 38px;
 }
 
-a {
+.new-coll-hr {
     font-size: 38px;
     color: rgb(33 37 41);
     text-decoration: underline;
@@ -107,7 +115,7 @@ a {
     font-size: 37px;
     display: flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .cont-filter {
@@ -269,6 +277,7 @@ a {
 
 .choose-color--white {
     background-color: #fff;
+    border: 1px solid #00000040;
 }
 
 .choose-color--black {
@@ -327,6 +336,7 @@ a {
     font-size: 35px;
     color: #fff;
     margin: 10px 40px;
+    text-decoration: none;
 }
 
 .cont-main-news {
@@ -342,21 +352,33 @@ a {
     justify-content: center;
 }
 
+.cont-or-ns {
+    width: 470px;
+    height: 301px;
+}
+
 .cont-other-nws {
     margin-top: 30px;
     display: flex;
     gap: 23px;
+    justify-content: center;
 }
 
 .other-ns {
-    width: 491px;
+    width: 470px;
+    height: 235px;
 }
 
 .text-news {
-    font-size: 25px;
+    font-size: 22px;
+    width: 100%;
+    color: rgb(49 52 55);
+    text-decoration: none;
 }
 
-.txt-fqa {
+/* FAQ */
+
+/* .txt-fqa {
     font-size: 23px;
     padding: 15px;
 }
@@ -383,8 +405,139 @@ a {
 
 .icon-arrow {
     margin-right: 15px;
+} */
+
+
+/* FAQ Section */
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+.header-primary {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 33px;
+}
+
+.faq {
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background-color: var(--faq-bg);
+    border: 1px solid var(--faq-border);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.faq-question {
+    font-size: 23px;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0;
+}
+
+.faq-answer {
+    font-size: 20px;
+    padding: 0 10px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer {
+    height: auto;
+    padding: 10px;
+}
+
+.faq-item.active .expand-icon {
+    transform: rotate(45deg);
+}
+
+.expand-icon {
+    transition: transform 0.3s;
+    margin-right: 15px;
+    font-size: 35px;
+}
+
+/* Theme Toggle */
+.theme-switch {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Color Samples */
+.color-samples {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.color-sample {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+}
+
+.color-sample:nth-child(1) {
+    background-color: var(--base-color);
+}
+
+.color-sample.triad-1 {
+    background-color: var(--triad-1);
+}
+
+.color-sample.triad-2 {
+    background-color: var(--triad-2);
+}
+
+.color-sample.lighter {
+    background-color: var(--lighter-color);
+}
+
+/* Button Styling */
+.styled-button {
+    width: var(--button-size);
+    height: calc(var(--button-size) / 2.5);
+    border-radius: var(--button-radius);
+    background-color: var(--base-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.styled-button:hover {
+    background-color: var(--lighter-color);
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --bg-color: #333;
+    --text-color: #f9f9f9;
+    --faq-bg: #444;
+    --faq-border: #555;
+}
+
+/* Подписка на новости */
 .text-main-soon {
     font-size: 35px;
 }
@@ -502,6 +655,11 @@ input[type="checkbox"] {
     gap: 16px;
 }
 
+.img-icons-foot {
+    display: flex;
+    justify-content: center;
+}
+
 .cont-right-desc {
     display: flex;
     flex-direction: column;
@@ -527,4 +685,11 @@ label > input[type="radio"]:checked + .select-solid {
     background-color: #d5d5d5;
     text-align: center;
     padding-top: 5px;
+}
+
+label {
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

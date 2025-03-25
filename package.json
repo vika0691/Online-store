@@ -1,0 +1,24 @@
+{
+  "name": "online-store-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vika0691/Online-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vika0691/Online-store/issues"
+  },
+  "homepage": "https://github.com/vika0691/Online-store#readme",
+  "description": "",
+  "dependencies": {
+    "typescript": "^5.8.2"
+  }
+}

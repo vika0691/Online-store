@@ -13,6 +13,7 @@ handleClick(modelS, 'model')
 handleClick(colorW, 'color')
 handleClick(colorB, 'color')
 
+
 /**
  * **handleClick** - можно изменить и сделать ее чуть более универсальный.
  * За счет выноса из нее updateImage и передачи, как аргумента, тогда можно будет передавать любые параметры

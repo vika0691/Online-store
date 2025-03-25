@@ -16,6 +16,3 @@ sendEmail.addEventListener('click', () => {
 
     alert("Галочка обязательно!")
 })
-
-
-
