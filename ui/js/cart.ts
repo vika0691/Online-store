@@ -26,6 +26,7 @@ export class Storage {
         pr.count = pr.count + 1
 
         localStorage.removeItem(id);
+        Storage.setItem(pr)
         return 
     }
 }
@@ -42,17 +43,24 @@ for (let i = 0; i < localStorage.length; i++) {
 
     console.log(product)
     root?.insertAdjacentHTML('afterend', `
-       <div class="test-js">
-                <img src="${product.image}" />
-                <h3>
-                    ${product.name}
-                </h3>
-                <span>
-                    <b style="color: 'red'">Цена:</b> ${product.price * product.count}
-                </span>
-                <h3>Количество ${product.count}
+       <div class="cont-for-cart">
+            <div class="img-cart">
+                <img class="photo-cart" src="./ui/images/${product.image}" />
             </div>
+
+            <div class="cont-for-desc-del">
+                <div class="cont-for-text">
+                    <div class="text-desc">Название: ${product.name}</div>
+                    <div class="text-desc">Размер: </div>
+                    <div class="text-desc">Количество: ${product.count}</div>
+                    <div class="text-desc">Цена: ${product.price * product.count}</div>
+                </div>
+
+                <div class="delete-icon">X</div>
+            </div>
+                
+        </div>
     `);
 
-    root?.insertAdjacentHTML('afterend', `<li>Цена: ${product.price}</li>`);
+    // root?.insertAdjacentHTML('afterend', `<li>Цена: ${product.price}</li>`);
 }

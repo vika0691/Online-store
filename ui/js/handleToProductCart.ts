@@ -16,6 +16,7 @@ for (const el of Array.from(btn)) {
 export function addProduct(product: string) {
     const { id, ...data } = JSON.parse(product) as Product
     const resultGetItem = Storage.getItem(String(id))
+    console.log(resultGetItem, product, id)
 
     if(resultGetItem !== undefined) {
         Storage.updateItem(String(id), { id, ...data })
