@@ -194,6 +194,7 @@ body{
 }
 
 .container-for-cat {
+    display: none; /* Скрываем все карточки по умолчанию */
     display: flex;
     flex-direction: column;
 }
