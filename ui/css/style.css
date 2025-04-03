@@ -575,6 +575,12 @@ body.dark-theme {
     margin-top: 13px;
 }
 
+
+.error {
+    color: red;
+    display: none; /* Скрываем сообщение об ошибке по умолчанию */
+}
+
 .button-email {
     background-color: #000;
     color: #fff;
@@ -695,6 +701,6 @@ label {
     gap: 10px;
 }
 
-.test-js {
-    /**/
-}
+/* .test-js {
+
+} */

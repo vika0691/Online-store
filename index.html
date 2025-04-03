@@ -12,10 +12,9 @@
     <link href="./ui/css/style.css" rel="stylesheet"></link>
     <script type="module" src="./dist/js-main.js"></script>
     <script type="module" src="./dist/handleToProductCart.js"></script>
-    <script defer src="./dist/check-input.js"></script>
+    <script type="module" src="./ui/js/check-input.js"></script>
     <script type="module" src="./ui/js/faq.js"></script>
     <script type="module" src="./ui/js/filter.js"></script>
-
     <title>Online-store</title>
 </head>
 
@@ -487,15 +486,17 @@
             <div class="right-cont-soon">
                 <form class="cont-email-soon">
                     <div class="cont-email">
-                        <input class="form-email" type="email" placeholder="E-mail">
+                        <input class="form-email" type="email" placeholder="E-mail" required>
                         <button class="button-email" id="sendEmail" type="button">Отправить</button>
                     </div>
+
                     <div class="cont-for-chbox">
                         <label>
                             <input id="checkbox" type="checkbox" checked>
                             <div class="txt-for-checkbox">Я согласен на обработку информации и персональных данных</div>
                         </label>
                     </div>
+                    <div class="error" id="error-message">Пожалуйста, введите корректный E-mail и согласитесь на обработку данных.</div>
                 </form>
             </div>
         </div>
