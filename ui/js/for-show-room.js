@@ -42,7 +42,7 @@ const printButtons = document.querySelectorAll('.choose-print');
 printButtons.forEach(button => {
   button.addEventListener('click', () => {
     const printUrl = button.getAttribute('data-print');
-    addOverlay(`url('/online-store-project/ui/images/${printUrl}.png')`);
+    addOverlay(`/online-store-project/ui/images/${printUrl}.png`);
   });
 });
 
@@ -52,9 +52,8 @@ inputUpload.addEventListener("change", (event) => {
 })
 
 function addOverlay(src) {
-  printOverlay.style.backgroundImage = src;
   printOverlay.style.display = 'block'; // Показываем принт
-  console.log(printOverlay, src)
+  printOverlay.style.backgroundImage = `url(${src})`
   obj.print = src; // Сохраняем выбранный принт
 }
 
@@ -63,7 +62,7 @@ function uploadImage(event) {
 
     const target = event.target
     const file = target.files;
-    console.log(file);
+
     if (!file) {
       return;
     }

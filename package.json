@@ -19,6 +19,7 @@
   "homepage": "https://github.com/vika0691/Online-store#readme",
   "description": "",
   "dependencies": {
+    "serve": "^14.2.4",
     "typescript": "^5.8.2"
   }
 }
