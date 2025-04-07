@@ -311,65 +311,67 @@
     <!-- Шоурум -->
     <div class="h-cat">Шоурум</div>
     <div class="cont-for-all-showroom">
-        <div class="cont-img-shr">
-            <div class="cont-img">
-                <img id="img-showroom" class="img-showroom" src="./ui/images/Hoodie-white-showroom.png" />
-                <div id="print-overlay" class="print-overlay"></div>
-            </div>
-        </div>
-
-
-        <div class="cont-txt-shr">
-            <div class="ct-mdl-ssh">
-                <div class="txt-choose-mod">Выберите модель:</div>
-                <div class="cont-mdl-sh">
-                    <label>
-                        <input type="radio" id="model-s" name="model" value='{ "model": "S" }' />
-                        <div class="select-solid model-shr" data-model-shr="model-s">Футболка</div>
-                    </label>
-
-                    <label>
-                        <input type="radio" id="model-h" name="model" value='{ "model": "H" }' />
-                        <div class="select-solid model-shr">Толстовка</div>
-                    </label>
+        <div class="wrap-cont-shr">
+            <div class="cont-img-shr">
+                <div class="cont-img">
+                    <img id="img-showroom" class="img-showroom" src="./ui/images/Hoodie-white-showroom.png" />
+                    <div id="print-overlay" class="print-overlay"></div>
                 </div>
             </div>
 
-            <div class="cont-size-shr">
-                <button class="size-sr" data-size="XS">XS</button>
-                <button class="size-sr" data-size="S">S</button>
-                <button class="size-sr" data-size="M">M</button>
-                <button class="size-sr" data-size="L">L</button>
-            </div>
 
-            <div class="cont-colour">
-                <div class="txt-choose-mod">Выберите цвет:</div>
-                <div class="ct-g-cl" id="select-colors">
+            <div class="cont-txt-shr">
+                <div class="ct-mdl-ssh">
+                    <div class="txt-choose-mod">Выберите модель:</div>
+                    <div class="cont-mdl-sh">
+                        <label>
+                            <input type="radio" id="model-s" name="model" value='{ "model": "S" }' />
+                            <div class="select-solid model-shr" data-model-shr="model-s">Футболка</div>
+                        </label>
 
-                    <label>
-                        <input type="radio" id="colour-w" name="color" value='{ "color": "W" }' />
-                        <div class="select choose-color choose-color--white"></div>
-                    </label>
-
-                    <label>
-                        <input type="radio" id="colour-b" name="color" value='{ "color": "B" }' />
-                        <div class="select choose-color choose-color--black"></div>
-                    </label>
+                        <label>
+                            <input type="radio" id="model-h" name="model" value='{ "model": "H" }' />
+                            <div class="select-solid model-shr">Толстовка</div>
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="cont-pr">
-                <div class="txt-choose-mod">Выберите принт:</div>
-                <div class="cont-ch-pr">
-                    <button class="choose-print" data-print="print1">PR</button>
-                    <button class="choose-print" data-print="print2">PR</button>
-                    <button class="choose-print" data-print="print3">PR</button>
+                <div class="cont-size-shr">
+                    <button class="size-sr" data-size="XS">XS</button>
+                    <button class="size-sr" data-size="S">S</button>
+                    <button class="size-sr" data-size="M">M</button>
+                    <button class="size-sr" data-size="L">L</button>
                 </div>
-            </div>
 
-            <div class="cont-butt-shwr">
-                <button id="addToCartBtn" class="showr" data-product='{ "id": 9, "name": "Product-9","price": 2500,"image": "Hoodie-white-showroom.png"}'>В корзину</button>
-                <button class="showr-pr">Свой принт</button>
+                <div class="cont-colour">
+                    <div class="txt-choose-mod">Выберите цвет:</div>
+                    <div class="ct-g-cl" id="select-colors">
+
+                        <label>
+                            <input type="radio" id="colour-w" name="color" value='{ "color": "W" }' />
+                            <div class="select choose-color choose-color--white"></div>
+                        </label>
+
+                        <label>
+                            <input type="radio" id="colour-b" name="color" value='{ "color": "B" }' />
+                            <div class="select choose-color choose-color--black"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cont-pr">
+                    <div class="txt-choose-mod">Выберите принт:</div>
+                    <div class="cont-ch-pr">
+                        <button class="choose-print" data-print="print-1">PR</button>
+                        <button class="choose-print" data-print="print-2">PR</button>
+                        <button class="choose-print" data-print="print-3">PR</button>
+                    </div>
+                </div>
+
+                <div class="cont-butt-shwr">
+                    <button id="addToCartBtn" class="showr" data-product='{ "id": 9, "name": "Product-9","price": 2500,"image": "Hoodie-white-showroom.png"}'>В корзину</button>
+                    <input class="showr-pr" type="file" accept="image/*" placeholder="Свой принт"/>
+                </div>
             </div>
         </div>
     </div>

@@ -41,13 +41,43 @@ const printButtons = document.querySelectorAll('.choose-print');
 
 printButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const printUrl = button.getAttribute('data-print-url');
-    printOverlay.style.backgroundImage = `url(${printUrl})`;
-    printOverlay.style.display = 'block'; // Показываем принт
-    obj.print = printUrl; // Сохраняем выбранный принт
+    const printUrl = button.getAttribute('data-print');
+    addOverlay(`url('/online-store-project/ui/images/${printUrl}.png')`);
   });
 });
 
+const inputUpload = document.getElementsByClassName("showr-pr")[0]
+inputUpload.addEventListener("change", (event) => {
+  uploadImage(event)
+})
+
+function addOverlay(src) {
+  printOverlay.style.backgroundImage = src;
+  printOverlay.style.display = 'block'; // Показываем принт
+  console.log(printOverlay, src)
+  obj.print = src; // Сохраняем выбранный принт
+}
+
+function uploadImage(event) {
+    const reader = new FileReader();
+
+    const target = event.target
+    const file = target.files;
+    console.log(file);
+    if (!file) {
+      return;
+    }
+
+    const image = file[0]
+
+    reader.readAsDataURL(image);
+    reader.onload = (e) => {
+      const { result } = e.target;
+
+      if(result === null) return;
+      addOverlay(result)
+    }
+}
 
 // Обработчик для кнопки "В корзину"
 addToCartButton.addEventListener('click', () => {

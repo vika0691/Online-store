@@ -200,21 +200,27 @@ body{
 }
 
 .img-showroom {
-    width: 550px; /* Установите нужный размер */
+    width: inherit;
     border-radius: 10px;
     height: auto;
+    position: absolute;
+}
+
+.cont-img {
     position: relative;
+    width: inherit;
 }
 
 .print-overlay {
     position: absolute;
-    /* top: 0;
-    left: 0; */
-    width: 100%;
-    /* height: 100%; */
-    background-size: contain;
+    top: 180px;
+    width: 320px;
+    height: 200px;
     background-repeat: no-repeat;
-    display: none; /* Скрываем по умолчанию */
+    display: none;
+    left: 49px;
+    background-position: center;
+    background-size: contain;
 }
 
 .selected {
@@ -227,15 +233,22 @@ body{
     align-items: center;
 }
 
-.cont-img-shr {
-    /* margin-left: 100px; */
-    margin-left: 170px;
-    margin-top: 60px;
+.wrap-cont-shr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 50px;
 }
+
+.cont-img-shr {
+    /* margin-top: 60px; */
+    width: 450px;
+    height: 550px;
+  }
 
 .cont-txt-shr {
     margin-top: 60px;
-    margin-right: 280px;
     font-size: 26px;
     display: flex;
     flex-direction: column;
