@@ -42,7 +42,7 @@ const printButtons = document.querySelectorAll('.choose-print');
 printButtons.forEach(button => {
   button.addEventListener('click', () => {
     const printUrl = button.getAttribute('data-print');
-    addOverlay(`/online-store-project/ui/images/${printUrl}.png`);
+    addOverlay(`./ui/images/${printUrl}.png`);
   });
 });
 
