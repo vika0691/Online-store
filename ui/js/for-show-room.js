@@ -58,24 +58,24 @@ function addOverlay(src) {
 }
 
 function uploadImage(event) {
-    const reader = new FileReader();
+  const reader = new FileReader();
 
-    const target = event.target
-    const file = target.files;
+  const target = event.target
+  const file = target.files;
 
-    if (!file) {
-      return;
-    }
+  if (!file) {
+    return;
+  }
 
-    const image = file[0]
+  const image = file[0]
 
-    reader.readAsDataURL(image);
-    reader.onload = (e) => {
-      const { result } = e.target;
+  reader.readAsDataURL(image);
+  reader.onload = (e) => {
+    const { result } = e.target;
 
-      if(result === null) return;
-      addOverlay(result)
-    }
+    if(result === null) return;
+    addOverlay(result)
+  }
 }
 
 // Обработчик для кнопки "В корзину"
