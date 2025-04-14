@@ -214,7 +214,8 @@ body{
 .print-overlay {
     position: absolute;
     top: 180px;
-    width: 320px;
+    /* width: 320px; было работало */
+    width: 350px;
     height: 200px;
     background-repeat: no-repeat;
     display: none;
