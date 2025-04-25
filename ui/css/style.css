@@ -139,6 +139,7 @@ body{
     font-size: 22px;
     width: 40px;
     background-color: #fdfdfd;
+    text-align: center;
 }
 
 .cat-card {
@@ -223,6 +224,13 @@ body{
     background-position: center;
     background-size: contain;
 }
+
+input[type="radio"]:checked {
+    + .size {
+        border: 2px solid rgb(64, 64, 79); /* Пример выделения выбранного элемента */
+    }
+}
+  
 
 .selected {
     border: 2px solid rgb(64, 64, 79); /* Пример выделения выбранного элемента */
@@ -750,7 +758,7 @@ label {
     margin: 15% auto; /* 15% сверху и центрирование */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Ширина окна */
+    width: 40%; /* Ширина окна */
     text-align: center; /* Центрирование текста */
 }
 

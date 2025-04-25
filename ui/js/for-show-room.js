@@ -78,15 +78,14 @@ function uploadImage(event) {
   }
 }
 
-// Обработчик для кнопки "В корзину"
-addToCartButton.addEventListener('click', () => {
-  if (selectedSize && obj.model && obj.color) {
-    alert(`Товар добавлен в корзину:\nМодель: ${obj.model}\nЦвет: ${obj.color}\nРазмер: ${selectedSize}\nПринт: ${obj.print ? 'Выбран' : 'Не выбран'}`);
-    // Здесь можно добавить код для добавления товара в корзину
-  } else {
-    alert('Пожалуйста, выберите модель, цвет и размер.');
-  }
-});
+// // Обработчик для кнопки "В корзину"
+// addToCartButton.addEventListener('click', () => {
+//   if (selectedSize && obj.model && obj.color) {
+//     alert(`Товар добавлен в корзину:\nМодель: ${obj.model}\nЦвет: ${obj.color}\nРазмер: ${selectedSize}\nПринт: ${obj.print ? 'Выбран' : 'Не выбран'}`);
+//   } else {
+//     alert('Пожалуйста, выберите модель, цвет и размер.');
+//   }
+// });
 
 
 /**

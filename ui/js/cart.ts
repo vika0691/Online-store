@@ -22,16 +22,14 @@ export class Storage {
 
     static updateItem(id: string, countChange: number) {
         const pr = this.getItem(id) as Product;
+
         if (pr) {
             pr.count += countChange;
-
-            if (pr.count <= 0) {
-                this.removeItem(id);
-            } else {
-                localStorage.removeItem(id);
-                Storage.setItem(pr);
-            }
+            
+            localStorage.removeItem(id);
+            this.setItem(pr);
         }
+
         return;
     }
 
@@ -39,35 +37,6 @@ export class Storage {
         localStorage.removeItem(productId);
     }
 }
-
-// Обработчик событий для выбора размера
-document.addEventListener('click', (event) => {
-    const target = event.target as HTMLElement;
-
-    if (target.classList.contains('size')) {
-        const sizeButtons = target.parentElement?.querySelectorAll('.size');
-        sizeButtons?.forEach(button => button.classList.remove('selected')); // Убираем выделение со всех кнопок
-        target.classList.add('selected'); // Выделяем выбранный размер
-    }
-});
-
-// Обработчик событий для добавления товара в корзину
-document.addEventListener('click', (event) => {
-    const target = event.target as HTMLElement;
-
-    if (target.classList.contains('cat-card')) {
-        const productData = target.getAttribute('data-product');
-        const selectedSizeButton = target.parentElement?.previousElementSibling?.querySelector('.size.selected');
-        const selectedSize = selectedSizeButton ? selectedSizeButton.getAttribute('data-size') : null;
-
-        if (productData) {
-            const product: Product = JSON.parse(productData);
-            product.size = selectedSize || 'Не выбран'; // Сохраняем выбранный размер или указываем, что он не выбран
-            product.count = 1; // Устанавливаем начальное количество при добавлении в корзину
-            Storage.setItem(product); // Сохраняем товар в корзину
-        }
-    }
-});
 
 // Функция для рендеринга корзины
 function renderCart() {
