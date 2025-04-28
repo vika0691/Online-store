@@ -62,7 +62,7 @@ for (const el of Array.from(btn)) {
         const parent = target.parentNode as HTMLElement;
 
         // Получаем соседний элемент, который содержит размеры
-        const sizeSibling = parent.previousElementSibling?.querySelector('.size') as HTMLElement;
+        const sizeSibling = parent.previousElementSibling.querySelector('.size') as HTMLElement;
 
         // Получаем данные о продукте
         const metaData = (target as HTMLElement).dataset.product?.replace(/\n/g, '');
