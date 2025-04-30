@@ -6,7 +6,7 @@ export interface Product {
     price: number;
     image: string;
     count: number;
-    size?: string; // Добавляем поле для размера
+    size: string; // Добавляем поле для размера
 }
 
 export class Storage {
@@ -17,7 +17,7 @@ export class Storage {
     }
 
     static setItem(product: Product) {
-        return localStorage.setItem(String(product.id), JSON.stringify(product));
+        return localStorage.setItem(String(product.id) + product.size, JSON.stringify(product));
     }
 
     static updateItem(id: string, countChange: number) {
@@ -25,8 +25,6 @@ export class Storage {
 
         if (pr) {
             pr.count += countChange;
-            
-            localStorage.removeItem(id);
             this.setItem(pr);
         }
 
