@@ -1,17 +1,18 @@
 import { Storage, Product } from "./cart.js";
+import { resolveImage } from "./utils.js";
 
-const modelH = document.getElementById("model-h");
-const modelS = document.getElementById("model-s");
-const imgShowRoom = document.getElementById("img-showroom");
-const colorW = document.getElementById("colour-w");
-const colorB = document.getElementById("colour-b");
-const printOverlay = document.getElementById('print-overlay') as HTMLElement;
+const modelH = document.getElementById("model-h") as HTMLInputElement;
+const modelS = document.getElementById("model-s") as HTMLInputElement;
+const imgShowRoom = document.getElementById("img-showroom") as HTMLImageElement;
+const colorW = document.getElementById("colour-w") as HTMLInputElement;
+const colorB = document.getElementById("colour-b") as HTMLInputElement;
+const printOverlay = document.getElementById('print-overlay') as HTMLImageElement;
 const sizeButtons = document.querySelectorAll('.size-sr');
 const addToCartButton = document.getElementById('addToCartShr');
 
 let selectedSize = '';
 let obj: Product = {
-  id: 0,
+  id: "0",
   model: "H",
   color: 'W',
   count: 1,
@@ -31,7 +32,7 @@ handleClick(colorB, 'color');
 // Обработчик для кнопок выбора размера
 sizeButtons.forEach(button => {
   button.addEventListener('click', () => {
-    selectedSize = button.getAttribute('data-size');
+    selectedSize = button.getAttribute('data-size')!;
     obj.size = selectedSize;
   });
 });
@@ -44,7 +45,7 @@ const printButtons = document.querySelectorAll('.choose-print');
 printButtons.forEach(button => {
   button.addEventListener('click', () => {
     const printUrl = button.getAttribute('data-print');
-    addOverlay(`./ui/images/${printUrl}.png`);
+    addOverlay(printOverlay, `./ui/images/${printUrl}.png`);
   });
 });
 
@@ -53,13 +54,12 @@ inputUpload.addEventListener("change", (event) => {
   uploadImage(event)
 })
 
-function addOverlay(src: string | ArrayBuffer) {
-  printOverlay.style.display = 'block'; // Показываем принт
-  printOverlay.style.backgroundImage = `url(${src})`
-  obj.print = src; // Сохраняем выбранный принт
+function addOverlay(img: HTMLImageElement, src: string | ArrayBuffer) {
+  img.style.display = 'block'; // Показываем принт
+  img.style.backgroundImage = `url(${src})`
 }
 
-function uploadImage(event: File) {
+function uploadImage(event: Event) {
   const reader = new FileReader();
 
   const target = event.target
@@ -77,7 +77,8 @@ function uploadImage(event: File) {
     const { result } = e.target as FileReader;
 
     if(result === null) return;
-    addOverlay(result);
+
+    addOverlay(printOverlay, result);
     obj.print = result
   }
 }
@@ -93,7 +94,7 @@ function uploadImage(event: File) {
 
 */
 
-function handleClick(element, key) {
+function handleClick(element: HTMLInputElement, key: string) {
   element.addEventListener("click", () => {
     const data = JSON.parse(element.value);
     obj[key] = data[key];
@@ -101,9 +102,9 @@ function handleClick(element, key) {
   });
 }
 
-function updateImage({ color, model }) {
+function updateImage({ color, model }: Product) {
   if (!model || !color) return;
-  imgShowRoom.src = `./ui/images/${model === "H" ? "Hoodie" : "Short"}-${color === "W" ? "white" : "black"}-showroom.png`;
+  imgShowRoom.src = resolveImage(color, model)
 }
 
 addToCartButton?.addEventListener("click", () => {

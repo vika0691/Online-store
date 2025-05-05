@@ -1,3 +1,5 @@
+import { resolveImage } from "./utils.js"
+
 const root = document.getElementById('root');
 
 export interface Product {
@@ -20,7 +22,7 @@ export class Storage {
     }
 
     static setItem(product: Product) {
-        return localStorage.setItem(String(product.id) + product.size, JSON.stringify(product));
+        return localStorage.setItem(product.id + product.size, JSON.stringify(product));
     }
 
     static updateItem(id: string, countChange: number) {
@@ -54,10 +56,17 @@ function renderCart() {
         let productDiv = document.createElement('div');
         productDiv.classList.add('cont-for-cart');
 
-        productDiv.innerHTML = !!product.print ? `html когда есть принт`: 
-                `<div class="img-cart">
-                    <img class="photo-cart" src="./ui/images/${product?.image}" />
-                </div>`
+        const srcBaseImage = resolveImage(product.color, product.model)
+
+        productDiv.innerHTML = !!product.print ? `
+            <div class="img-cart">
+                <img class="img-showroom" src="${srcBaseImage}" />
+                <div class="print-overlay" style="background-image: url(${product.print})"></div>
+            </div>`
+                :
+            `<div class="img-cart">
+                <img class="photo-cart" src="./ui/images/${product?.image}" />
+            </div>`
 
         productDiv.innerHTML += `
             <div class="cont-for-desc-del">

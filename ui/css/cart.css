@@ -7,13 +7,13 @@ body {
 
 .photo-cart {
     width: 260px;
-    height: 260px;
 }
 
 .cont-for-cart {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     margin: 25px;
+    height: 310px;
 }
 
 .cont-for-text {
@@ -27,3 +27,32 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.print-overlay {
+    position: absolute;
+    top: 90px;
+    width: 110px;
+    height: 120px;
+    background-repeat: no-repeat;
+    left: 69px;
+    background-position: center;
+    background-size: contain;
+}
+
+.img-showroom {
+    width: inherit;
+    border-radius: 10px;
+    height: auto;
+    position: absolute;
+}
+
+.cont-img {
+    position: relative;
+    width: inherit;
+}
+
+.img-cart {
+    position: relative;
+    width: 250px;
+}
+
