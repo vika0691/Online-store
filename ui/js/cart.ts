@@ -1,12 +1,15 @@
 const root = document.getElementById('root');
 
 export interface Product {
-    id: number;
+    id: string;
     name: string;
     price: number;
-    image: string;
+    image?: string;
+    print?: string | ArrayBuffer;
     count: number;
     size: string; // Добавляем поле для размера
+    model: 'H' | 'S';
+    color: 'W' | 'B';
 }
 
 export class Storage {
@@ -48,18 +51,22 @@ function renderCart() {
         if (!data) continue;
         const product = data as Product;
 
-        const productDiv = document.createElement('div');
+        let productDiv = document.createElement('div');
         productDiv.classList.add('cont-for-cart');
-        productDiv.innerHTML = `
-            <div class="img-cart">
-                <img class="photo-cart" src="./ui/images/${product.image}" />
-            </div>
+
+        productDiv.innerHTML = !!product.print ? `html когда есть принт`: 
+                `<div class="img-cart">
+                    <img class="photo-cart" src="./ui/images/${product?.image}" />
+                </div>`
+
+        productDiv.innerHTML += `
             <div class="cont-for-desc-del">
                 <div class="cont-for-text">
                     <div class="text-desc">Название: ${product.name}</div>
                     <div class="text-desc">Размер: ${product.size || 'Не выбран'}</div>
                     <div class="text-desc">Количество: <span class="product-count" data-id="${product.id}">${product.count}</span></div>
                     <div class="text-desc">Цена: <span class="product-price" data-id="${product.id}">${(product.price * product.count).toFixed(2)} ₽</span></div>
+                    ${ typeof product?.color == 'string' ? `<div class="text-desc">Цвет: ${product.color}</div>` : '' }
                 </div>
                 <div class="quantity-controls">
                     <button class="decrease" data-id="${product.id}">-</button>
