@@ -8,7 +8,7 @@ const colorW = document.getElementById("colour-w") as HTMLInputElement;
 const colorB = document.getElementById("colour-b") as HTMLInputElement;
 const printOverlay = document.getElementById('print-overlay') as HTMLImageElement;
 const sizeButtons = document.querySelectorAll('.size-sr');
-const addToCartButton = document.getElementById('addToCartShr');
+const addToCartButton = document.getElementById('addToCartShr') as HTMLElement;
 
 let selectedSize = '';
 let obj: Product = {
@@ -62,14 +62,13 @@ function addOverlay(img: HTMLImageElement, src: string | ArrayBuffer) {
 function uploadImage(event: Event) {
   const reader = new FileReader();
 
-  const target = event.target
-  const file = target.files;
+  const { files } = (event.target as HTMLInputElement)
 
-  if (!file) {
+  if (!files) {
     return;
   }
 
-  const image = file[0]
+  const image = files[0]
   obj.name = `showroom ${image.name.replace(/\.(png|jpg|jpeg)/g, '')}`;
 
   reader.readAsDataURL(image);
@@ -94,9 +93,9 @@ function uploadImage(event: Event) {
 
 */
 
-function handleClick(element: HTMLInputElement, key: string) {
+function handleClick(element: HTMLInputElement, key: keyof Product) {
   element.addEventListener("click", () => {
-    const data = JSON.parse(element.value);
+    const data = JSON.parse(element.value) as Product;
     obj[key] = data[key];
     updateImage(obj);
   });
@@ -107,7 +106,7 @@ function updateImage({ color, model }: Product) {
   imgShowRoom.src = resolveImage(color, model)
 }
 
-addToCartButton?.addEventListener("click", () => {
+addToCartButton.addEventListener("click", () => {
   const { id, ...data } = obj;
   Storage.setItem({ 
     "id": `showroom-${id + obj.color + obj.model}`,
